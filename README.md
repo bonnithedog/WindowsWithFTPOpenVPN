@@ -1,4 +1,4 @@
-# WindowsWithFTPOpenVPN
+# Windows WithFTP and OpenVPN
 
 
 This project use a Windows VM with bootstrapping software install.
