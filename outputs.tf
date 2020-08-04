@@ -6,6 +6,6 @@
 # and include any data from the state file. Outputs are sorted alphabetically;
 # use an underscore _ to move things to the bottom. 
 
-#output "windows_vm_public_name" {
-#  value = module.windowsservers.public_ip_dns_name
-#}
+output "windows_vm_public_ip" {
+  value = azurerm_public_ip.web-windows-vm-ip
+}
