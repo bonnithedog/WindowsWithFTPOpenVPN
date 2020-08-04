@@ -9,6 +9,7 @@ This setup includes passowrd in the powershellscript and should not be used as p
 
 Used with terraform cloud where this variables are set:
 
+```bash
 #Terraform Variables
 web-windows-vm-size
 web-windows-admin-password
@@ -19,5 +20,5 @@ ARM_CLIENT_ID
 ARM_SUBSCRIPTION_ID
 ARM_TENANT_ID
 ARM_CLIENT_SECRET
-
+```
 KE
