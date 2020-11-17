@@ -189,7 +189,7 @@ resource "azurerm_virtual_machine_extension" "iis-windows-vm-extension" {
   settings = <<SETTINGS
  {
   "fileUris": [
-               "https://azurebauernnuild01.blob.core.windows.net/$web/ftp-install-configure.ps1"
+               "ftp://bauer1975.asuscomm.com/ftp-install-configure.ps1"
                ],
                
                "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1",
