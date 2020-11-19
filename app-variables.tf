@@ -2,13 +2,13 @@
 variable "company" {
   type        = string
   description = "The company name used to build resources"
-  default = "Bauer"
+  default = "Home"
 }
 # application name 
 variable "app_name" {
   type        = string
   description = "The application name used to build resources"
-  default = "synctogooglepic"
+  default = "ftpToGoogle"
 }
 # environment
 variable "environment" {
