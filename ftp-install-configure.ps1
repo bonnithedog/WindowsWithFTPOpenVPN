@@ -96,6 +96,10 @@ Import-Module WebAdministration
  powershell wget "https://swupdate.openvpn.org/community/releases/openvpn-install-2.4.9-I601-Win10.exe" -OutFile openvpn-install-2.4.9-i601-win10.exe
  powershell Start-Process openvpn-install-2.4.9-i601-win10.exe /S 
  
+ powershell wget "https://dl.google.com/tag/s/appguid%3D%7B3C122445-AECE-4309-90B7-85A6AEF42AC0%7D%26iid%3D%7B9648D435-67BA-D2A7-54D2-1E0B5656BF03%7D%26ap%3Duploader%26appname%3DBackup%2520and%2520Sync%26needsadmin%3Dtrue/drive/installbackupandsync.exe" -OutFile installbackupandsync.exe
+ 
+
+ 
  #New-NetFirewallRule -DisplayName "Allow Innbound Ppassive mode port range. Usually (60000-60100)" -Direction Inbound -LocalPort 60000-60100 -Protocol TCP -Action Allow
   
  #Set-WebConfiguration "/system.ftpServer/firewallSupport" -PSPath "IIS:\" -Value @{lowDataChannelPort="60000";highDataChannelPort="60100";}
