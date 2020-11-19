@@ -3,13 +3,13 @@
 variable "web-windows-admin-username" {
   type        = string
   description = "Windows Web VM Admin User"
-  #default     = "tfadmin"
+  #default     = "*********"
 }
 # Windows Web VM Admin Password
 variable "web-windows-admin-password" {
   type        = string
   description = "Windows Web VM Admin Password"
-  #default     = "S3cr3ts24"
+  #default     = "***********"
 }
 # Windows web VM Virtual Machine Size
 variable "web-windows-vm-size" {
