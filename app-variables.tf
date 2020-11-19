@@ -22,3 +22,10 @@ variable "location" {
   description = "Azure region where the resources will be created"
   default     = "north europe"
 }
+
+#Uris access
+variable "perstokenftptogdisk" {
+  type        = string
+  description = "The application name used to build resources"
+  default = ""
+}
