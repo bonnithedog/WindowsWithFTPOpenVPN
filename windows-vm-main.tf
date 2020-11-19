@@ -186,30 +186,18 @@ resource "azurerm_virtual_machine_extension" "Install-Requierd-Software" {
   publisher = "Microsoft.Compute"
   type = "CustomScriptExtension"
   type_handler_version = "1.8"
-#  settings = <<SETTINGS
-# {
-#  "fileUris": [
-#               "https://github.com/bonnithedog/WindowsWithFTPOpenVPN/blob/master/ftp-install-configure.ps1"
-#               ],
-#               
-#               "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1",
-#  "managedIdentity" : {"principal_id": "${var.perstokenftptogdisk}"}
-#}
-#  SETTINGS
-
   settings = <<SETTINGS
-  {
-  "fileUris": ["https://github.com/bonnithedog/WindowsWithFTPOpenVPN/blob/master/ftp-install-configure.ps1"],
-  "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1 '${var.url}' '${var.perstokenftptogdisk}' '${var.pool}' '${var.agent}'",
-  "timestamp" : "11"
-  }
-SETTINGS
+ {
+  "fileUris": [
+               "https://gist.githubusercontent.com/bonnithedog/f51abfa76fa81af83acd81f653cf58ab/raw/86b8e4e605ac2406e34bde7eb92080b0ecd85eca/ftp-install-configure.ps1"
+               ],
+               
+               "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1",
+  "managedIdentity" : {}
+}
+  SETTINGS
 
-
-
-
-
-
+  
   tags = {
     application = var.app_name
     environment = var.environment
