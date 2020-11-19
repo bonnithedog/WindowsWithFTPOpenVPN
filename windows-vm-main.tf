@@ -179,7 +179,7 @@ resource "azurerm_windows_virtual_machine" "web-windows-vm" {
 #Install local software
 
 # Virtual Machine Extension to Install Requierd software
-resource "azurerm_virtual_machine_extension" "Install-Requierd-Software" {
+resource "azurerm_virtual_machine_extension" "Requierd Software" {
   depends_on=[azurerm_windows_virtual_machine.web-windows-vm]
   name = "win-${random_string.random-win-vm.result}-vm-extension"
   virtual_machine_id = azurerm_windows_virtual_machine.web-windows-vm.id
