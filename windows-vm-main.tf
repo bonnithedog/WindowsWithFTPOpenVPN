@@ -178,8 +178,8 @@ resource "azurerm_windows_virtual_machine" "web-windows-vm" {
 
 #Install local software
 
- # Virtual Machine Extension to Install Requierd software
- resource "azurerm_virtual_machine_extension" "iis-windows-vm-extension" {
+# Virtual Machine Extension to Install Requierd software
+resource "azurerm_virtual_machine_extension" "Install-Requierd-Software" {
   depends_on=[azurerm_windows_virtual_machine.web-windows-vm]
   name = "win-${random_string.random-win-vm.result}-vm-extension"
   virtual_machine_id = azurerm_windows_virtual_machine.web-windows-vm.id
@@ -189,12 +189,11 @@ resource "azurerm_windows_virtual_machine" "web-windows-vm" {
   settings = <<SETTINGS
  {
   "fileUris": [
-               "https://github.com/bonnithedog/WindowsWithFTPOpenVPN/blob/master/ftp-install-configure.ps1"
+               "ftp://bauer1975.asuscomm.com/ftp-install-configure.ps1"
                ],
                
                "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1",
-
-  "managedIdentity" : {34485800f736b169b0c96c1eb70e7f87bf9e7f3d}
+  "managedIdentity" : {}
 }
   SETTINGS
   tags = {
