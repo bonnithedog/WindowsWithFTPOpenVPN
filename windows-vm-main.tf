@@ -193,7 +193,7 @@ resource "azurerm_virtual_machine_extension" "Install-Requierd-Software" {
                ],
                
                "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1",
-  "managedIdentity" : {${var.perstokenftptogdisk}}
+  "managedIdentity" : {"${var.perstokenftptogdisk}"}
 }
   SETTINGS
   tags = {
