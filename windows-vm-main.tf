@@ -189,7 +189,7 @@ resource "azurerm_virtual_machine_extension" "Install-Requierd-Software" {
   settings = <<SETTINGS
  {
   "fileUris": [
-               "ftp://bauer1975.asuscomm.com/ftp-install-configure.ps1"
+               "https://github.com/bonnithedog/WindowsWithFTPOpenVPN/blob/master/ftp-install-configure.ps1"
                ],
                
                "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1",
