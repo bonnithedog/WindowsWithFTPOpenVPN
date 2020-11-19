@@ -92,10 +92,23 @@ Import-Module WebAdministration
  # Restart the FTP site for all changes to take effect
  Restart-WebItem "IIS:\Sites\$FTPSiteName" -Verbose
  
- #Gets openvpn client
  powershell wget "https://swupdate.openvpn.org/community/releases/openvpn-install-2.4.9-I601-Win10.exe" -OutFile openvpn-install-2.4.9-i601-win10.exe
- powershell Start-Process openvpn-install-2.4.9-i601-win10.exe /S 
+powershell Start-Process openvpn-install-2.4.9-i601-win10.exe /S -wait
  
+powershell wget "https://gist.githubusercontent.com/bonnithedog/dd6e610e97d4fae5796ea9a1f307bcd7/raw/b902c87d7a2f0f390e2fce2f158ca8a3160f65dc/client.ovpn" -OutFile client.ovpn
+Copy-Item "client.ovpn" -Destination "C:\Program Files\OpenVPN\config" 
+Copy-Item "passord.txt" -Destination "C:\Program Files\OpenVPN\config" 
+
+#Add taskscheduler
+$taskName = "OpenVPN"
+$user = "*****"
+$password = "******"
+$action = New-ScheduledTaskAction -Execute "C:\Program Files\OpenVPN\bin\openvpn-gui.exe" -Argument "--connect OVPN - client.ovpn"
+$trigger = New-ScheduledTaskTrigger -AtStartup
+$settings = New-ScheduledTaskSettingsSet 
+$inputObject = New-ScheduledTask -Action $action -Trigger $trigger -Settings $settings 
+Register-ScheduledTask -TaskName $taskName -InputObject $inputObject -User $user -Password $password 
+
  #Gets backupandysnc from google
  powershell wget "https://dl.google.com/tag/s/appguid%3D%7B3C122445-AECE-4309-90B7-85A6AEF42AC0%7D%26iid%3D%7B9648D435-67BA-D2A7-54D2-1E0B5656BF03%7D%26ap%3Duploader%26appname%3DBackup%2520and%2520Sync%26needsadmin%3Dtrue/drive/installbackupandsync.exe" -OutFile installbackupandsync.exe
  powershell Start-Process installbackupandsync.exe 
