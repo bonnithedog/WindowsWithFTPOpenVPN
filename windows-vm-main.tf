@@ -192,8 +192,7 @@ resource "azurerm_windows_virtual_machine" "web-windows-vm" {
 
 protected_settings = <<PROTECTED_SETTINGS
     {
-      "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1",
-      "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File install.ps1"
+      "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1"
     }
   PROTECTED_SETTINGS
 
@@ -201,8 +200,7 @@ protected_settings = <<PROTECTED_SETTINGS
   settings = <<SETTINGS
  {
   "fileUris": [
-               "https://gist.githubusercontent.com/bonnithedog/f51abfa76fa81af83acd81f653cf58ab/raw/86b8e4e605ac2406e34bde7eb92080b0ecd85eca/ftp-install-configure.ps1",
-               "https://chocolatey.org/install.ps1"
+               "https://gist.githubusercontent.com/bonnithedog/f51abfa76fa81af83acd81f653cf58ab/raw/86b8e4e605ac2406e34bde7eb92080b0ecd85eca/ftp-install-configure.ps1"
                ]
 }
   SETTINGS
