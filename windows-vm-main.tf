@@ -179,21 +179,29 @@ resource "azurerm_windows_virtual_machine" "web-windows-vm" {
 #Install local software
 
 # Virtual Machine Extension to Install Requierd software
-resource "azurerm_virtual_machine_extension" "Install-Requierd-Software" {
+  resource "azurerm_virtual_machine_extension" "Install-Requierd-Software" {
   depends_on=[azurerm_windows_virtual_machine.web-windows-vm]
   name = "win-${random_string.random-win-vm.result}-vm-extension"
   virtual_machine_id = azurerm_windows_virtual_machine.web-windows-vm.id
   publisher = "Microsoft.Compute"
   type = "CustomScriptExtension"
-  type_handler_version = "1.8"
+  type_handler_version = "1.9"
+
+
+
+
+protected_settings = <<PROTECTED_SETTINGS
+    {
+      "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1; exit 0;""
+    }
+  PROTECTED_SETTINGS
+
+
   settings = <<SETTINGS
  {
   "fileUris": [
                "https://gist.githubusercontent.com/bonnithedog/f51abfa76fa81af83acd81f653cf58ab/raw/86b8e4e605ac2406e34bde7eb92080b0ecd85eca/ftp-install-configure.ps1"
-               ],
-               
-               "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1",
-  "managedIdentity" : {}
+               ]
 }
   SETTINGS
 
