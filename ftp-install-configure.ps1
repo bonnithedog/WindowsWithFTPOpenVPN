@@ -1,4 +1,4 @@
-
+ 
  
 New-Item -Path "c:\" -Name "transcripts" -ItemType "directory"
 Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
@@ -119,6 +119,14 @@ Import-Module WebAdministration
  Restart-Service ftpsvc  
 
 
+ https://chocolatey.org/install.ps1
+
+ #Download and install Chocolate 
+powershell wget "https://chocolatey.org/install.ps1" -OutFile choco.ps1
+powershell .\choco.ps1
+cmd choco install google-backup-and-sync
+
+
 #Download and install openVPN 
 powershell wget "https://swupdate.openvpn.org/community/releases/openvpn-install-2.4.9-I601-Win10.exe" -OutFile openvpn-install-2.4.9-i601-win10.exe
 powershell Start-Process openvpn-install-2.4.9-i601-win10.exe /S -wait
@@ -140,9 +148,12 @@ Copy-Item "passord.txt" -Destination "C:\Program Files\OpenVPN\config"
 
 
 
- #Gets backupandysnc from google
- powershell wget "https://dl.google.com/tag/s/appguid%3D%7B3C122445-AECE-4309-90B7-85A6AEF42AC0%7D%26iid%3D%7B9648D435-67BA-D2A7-54D2-1E0B5656BF03%7D%26ap%3Duploader%26appname%3DBackup%2520and%2520Sync%26needsadmin%3Dtrue/drive/installbackupandsync.exe" -OutFile installbackupandsync.exe
- powershell Start-Process installbackupandsync.exe 
+ ##Gets backupandysnc from google
+ #powershell wget "https://dl.google.com/tag/s/appguid%3D%7B3C122445-AECE-4309-90B7-85A6AEF42AC0%7D%26iid%3D%7B9648D435-67BA-D2A7-54D2-1E0B5656BF03%7D%26ap%3Duploader%26appname%3DBackup%2520and%2520Sync%26needsadmin%3Dtrue/drive/installbackupandsync.exe" -OutFile installbackupandsync.exe
+ #powershell Start-Process installbackupandsync.exe 
+
+ #Start-Process nohup 'installbackupandsync.exe -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
  
  
  Stop-Transcript
+ 
