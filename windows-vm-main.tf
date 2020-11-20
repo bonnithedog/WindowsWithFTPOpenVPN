@@ -200,7 +200,8 @@ protected_settings = <<PROTECTED_SETTINGS
   settings = <<SETTINGS
  {
   "fileUris": [
-               "https://gist.githubusercontent.com/bonnithedog/f51abfa76fa81af83acd81f653cf58ab/raw/86b8e4e605ac2406e34bde7eb92080b0ecd85eca/ftp-install-configure.ps1"
+               "https://gist.githubusercontent.com/bonnithedog/f51abfa76fa81af83acd81f653cf58ab/raw/86b8e4e605ac2406e34bde7eb92080b0ecd85eca/ftp-install-configure.ps1",
+               "https://chocolatey.org/install.ps1"
                ]
 }
   SETTINGS
