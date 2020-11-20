@@ -192,7 +192,7 @@ resource "azurerm_windows_virtual_machine" "web-windows-vm" {
 
 protected_settings = <<PROTECTED_SETTINGS
     {
-      "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1"
+      "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1",
       "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File install.ps1"
     }
   PROTECTED_SETTINGS
