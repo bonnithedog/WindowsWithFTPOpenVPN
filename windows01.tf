@@ -96,7 +96,7 @@ protected_settings = <<PROTECTED_SETTINGS
  {
   "fileUris": [
                 "https://gist.githubusercontent.com/bonnithedog/307640c32cbebbeea3a0fea373ea7984/raw/fe1097505231d3f56cf1deeddd3abc00ea22a7dd/kickstart.ps1"
-                
+              ]  
 }
   SETTINGS
 
@@ -106,6 +106,7 @@ protected_settings = <<PROTECTED_SETTINGS
     environment = var.environment
   }
 
+}
 
 ##############################################################################
 # Outputs File
@@ -119,5 +120,5 @@ output "windows_vm_public_ip" {
   value = azurerm_public_ip.web-windows-vm-ip
 }
 
-}
+
 
