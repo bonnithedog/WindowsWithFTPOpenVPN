@@ -35,6 +35,10 @@ powershell Start-Process openvpn-install-2.4.9-i601-win10.exe /S -wait
 powershell wget "https://gist.githubusercontent.com/bonnithedog/dd6e610e97d4fae5796ea9a1f307bcd7/raw/2b6830b116214d1ac1b540b0a45fa8513aaf7af0/client.ovpn" -OutFile client.ovpn
 powershell wget "https://gist.githubusercontent.com/bonnithedog/b9d4b0255c26c760c50bf5dc327c966f/raw/525ddcbe8d207e1f64026646f30421f2a785c625/password.txt" -OutFile password.txt
 
+Set-Service -Name OpenVPNService -StartupType Automatic
+Set-Service -Name OpenVPNServiceInteractive -StartupType Manual 
+
+
 Copy-Item "client.ovpn" -Destination "C:\Program Files\OpenVPN\config" 
 Copy-Item "password.txt" -Destination "C:\Program Files\OpenVPN\config" 
 
