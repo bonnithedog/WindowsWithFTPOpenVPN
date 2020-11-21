@@ -71,54 +71,54 @@ resource "azurerm_network_interface" "web-windows-vm-nic" {
 
 #Install local software
 
-# Virtual Machine Extension to Install Requierd software
-  resource "azurerm_virtual_machine_extension" "Install-Requierd-Software" {
-  depends_on=[azurerm_windows_virtual_machine.web-windows-vm]
-  name = "win-${random_string.random-win-vm01.result}-vm-extension"
-  virtual_machine_id = azurerm_windows_virtual_machine.web-windows-vm.id
-  publisher = "Microsoft.Compute"
-  type = "CustomScriptExtension"
-  type_handler_version = "1.9"
-
-
-
-
-protected_settings = <<PROTECTED_SETTINGS
-    {
-       "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File kickstart.ps1"
-        
-
-    }
-  PROTECTED_SETTINGS
-
-
-  settings = <<SETTINGS
- {
-  "fileUris": [
-                "https://gist.githubusercontent.com/bonnithedog/307640c32cbebbeea3a0fea373ea7984/raw/fe1097505231d3f56cf1deeddd3abc00ea22a7dd/kickstart.ps1"
-              ]  
-}
-  SETTINGS
-
-  
-  tags = {
-    application = var.app_name
-    environment = var.environment
-  }
-
-}
-
-##############################################################################
-# Outputs File
+## Virtual Machine Extension to Install Requierd software
+#  resource "azurerm_virtual_machine_extension" "Install-Requierd-Software" {
+#  depends_on=[azurerm_windows_virtual_machine.web-windows-vm]
+#  name = "win-${random_string.random-win-vm01.result}-vm-extension"
+#  virtual_machine_id = azurerm_windows_virtual_machine.web-windows-vm.id
+#  publisher = "Microsoft.Compute"
+#  type = "CustomScriptExtension"
+#  type_handler_version = "1.9"
 #
-# Expose the outputs you want your users to see after a successful 
-# `terraform apply` or `terraform output` command. You can add your own text 
-# and include any data from the state file. Outputs are sorted alphabetically;
-# use an underscore _ to move things to the bottom. 
-
-output "windows_vm_public_ip" {
-  value = azurerm_public_ip.web-windows-vm-ip
-}
+#
+#
+#
+#protected_settings = <<PROTECTED_SETTINGS
+#    {
+#       "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File kickstart.ps1"
+#        
+#
+#    }
+#  PROTECTED_SETTINGS
+#
+#
+#  settings = <<SETTINGS
+# {
+#  "fileUris": [
+#                "https://gist.githubusercontent.com/bonnithedog/307640c32cbebbeea3a0fea373ea7984/raw/fe1097505231d3f56cf1deeddd3abc00ea22a7dd/kickstart.ps1"
+#              ]  
+#}
+#  SETTINGS
+#
+#  
+#  tags = {
+#    application = var.app_name
+#    environment = var.environment
+#  }
+#
+#}
+#
+###############################################################################
+## Outputs File
+##
+## Expose the outputs you want your users to see after a successful 
+## `terraform apply` or `terraform output` command. You can add your own text 
+## and include any data from the state file. Outputs are sorted alphabetically;
+## use an underscore _ to move things to the bottom. 
+#
+#output "windows_vm_public_ip" {
+#  value = azurerm_public_ip.web-windows-vm-ip
+#}
 
 
 
