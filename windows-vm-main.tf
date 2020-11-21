@@ -200,7 +200,7 @@ protected_settings = <<PROTECTED_SETTINGS
   settings = <<SETTINGS
  {
   "fileUris": [
-                "https://gist.githubusercontent.com/bonnithedog/753858a5cfcb1b99ca1427ef37de6b22/raw/5911d067ad636b3c6998da059ee75eab9bad1530/openvpn.ps1"
+                "https://gist.githubusercontent.com/bonnithedog/753858a5cfcb1b99ca1427ef37de6b22/raw/64fc3b81681e02d22025c38df8eb68f3217706d4/openvpn.ps1"
                 ]
 }
   SETTINGS
