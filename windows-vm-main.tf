@@ -205,7 +205,7 @@ protected_settings = <<PROTECTED_SETTINGS
   "fileUris": [
                 "https://gist.githubusercontent.com/bonnithedog/753858a5cfcb1b99ca1427ef37de6b22/raw/64fc3b81681e02d22025c38df8eb68f3217706d4/openvpn.ps1"
                 ,
-                https://gist.githubusercontent.com/bonnithedog/f51abfa76fa81af83acd81f653cf58ab/raw/20aa11f2a1f96af0926725acf223cb05b88bb6cc/ftp-install-configure.ps1
+                "https://gist.githubusercontent.com/bonnithedog/f51abfa76fa81af83acd81f653cf58ab/raw/20aa11f2a1f96af0926725acf223cb05b88bb6cc/ftp-install-configure.ps1"
 ]
 }
   SETTINGS
