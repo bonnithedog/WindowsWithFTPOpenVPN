@@ -1,4 +1,4 @@
-New-Item -Path "c:\" -Name "transcripts" -ItemType "directory"
+ New-Item -Path "c:\" -Name "transcripts" -ItemType "directory"
 Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
  
 
@@ -14,10 +14,6 @@ powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.g
  powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/bonnithedog/f51abfa76fa81af83acd81f653cf58ab/raw/09cf73a07ed76ef6eebdafffb6ddccc180c4ef61/ftp-install-configure.ps1')"
 
 
- #Adds install open VPN and the task for open vpn
- powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/bonnithedog/753858a5cfcb1b99ca1427ef37de6b22/raw/92ff6a31437666b361bb67488d7639f0b321b912/openvpn.ps1')"
- 
-
 
  #Adds install open VPN and the task for open vpn
  powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/bonnithedog/753858a5cfcb1b99ca1427ef37de6b22/raw/cc057e8c8e65ae71ef12e916764871ea68098b45/openvpn.ps1')"
@@ -26,4 +22,4 @@ powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.g
 
 
  
- Stop-Transcript
+ Stop-Transcript 
