@@ -1,10 +1,6 @@
 
   
  
-New-Item -Path "c:\" -Name "transcripts" -ItemType "directory"
-Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
- 
-#Start-Process nohup 'installbackupandsync.exe -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
 
  
 # https://4sysops.com/archives/install-and-configure-an-ftp-server-with-powershell/
@@ -125,6 +121,4 @@ Import-Module WebAdministration
 
  
  
- 
- Stop-Transcript
  

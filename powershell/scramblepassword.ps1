@@ -23,3 +23,4 @@ Write-Host $password
 $password = Scramble-String $password
  
 Write-Host $password
+
