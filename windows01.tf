@@ -38,36 +38,36 @@ resource "azurerm_network_interface" "web-windows-vm-nic" {
   }
 }
 
-# Create Windows web Server
-resource "azurerm_windows_virtual_machine" "web-windows-vm" {
-  depends_on=[azurerm_network_interface.web-windows-vm-nic]
-  name = "win-${random_string.random-win-vm01.result}-vm"
-  location              = azurerm_resource_group.network-rg.location
-  resource_group_name   = azurerm_resource_group.network-rg.name
-  size                  = var.web-windows-vm-size
-  network_interface_ids = [azurerm_network_interface.web-windows-vm-nic.id]
-  
-  computer_name = "win-${random_string.random-win-vm01.result}-vm"
-  admin_username = var.web-windows-admin-username
-  admin_password = var.web-windows-admin-password
-  os_disk {
-    name = "win-${random_string.random-win-vm01.result}-vm-os-disk"
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
-  }
-  source_image_reference {
-    publisher = "MicrosoftWindowsServer"
-    offer     = "WindowsServer"
-    sku       = var.windows-2019-sku
-    version   = "latest"
-  }
-  enable_automatic_updates = true
-  provision_vm_agent       = true
-  tags = {
-    application = var.app_name
-    environment = var.environment 
-  }
-}
+## Create Windows web Server
+#resource "azurerm_windows_virtual_machine" "web-windows-vm" {
+#  depends_on=[azurerm_network_interface.web-windows-vm-nic]
+#  name = "win-${random_string.random-win-vm01.result}-vm"
+#  location              = azurerm_resource_group.network-rg.location
+#  resource_group_name   = azurerm_resource_group.network-rg.name
+#  size                  = var.web-windows-vm-size
+#  network_interface_ids = [azurerm_network_interface.web-windows-vm-nic.id]
+#  
+#  computer_name = "win-${random_string.random-win-vm01.result}-vm"
+#  admin_username = var.web-windows-admin-username
+#  admin_password = var.web-windows-admin-password
+#  os_disk {
+#    name = "win-${random_string.random-win-vm01.result}-vm-os-disk"
+#    caching              = "ReadWrite"
+#    storage_account_type = "Standard_LRS"
+#  }
+#  source_image_reference {
+#    publisher = "MicrosoftWindowsServer"
+#    offer     = "WindowsServer"
+#    sku       = var.windows-2019-sku
+#    version   = "latest"
+#  }
+#  enable_automatic_updates = true
+#  provision_vm_agent       = true
+#  tags = {
+#    application = var.app_name
+#    environment = var.environment 
+#  }
+#}
 
 #Install local software
 
