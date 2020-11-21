@@ -192,8 +192,6 @@ resource "azurerm_windows_virtual_machine" "web-windows-vm" {
 
 protected_settings = <<PROTECTED_SETTINGS
     {
-      "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File ftp-install-configure.ps1"
-      ,
        "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File openvpn.ps1"
     }
   PROTECTED_SETTINGS
@@ -202,9 +200,7 @@ protected_settings = <<PROTECTED_SETTINGS
   settings = <<SETTINGS
  {
   "fileUris": [
-               "https://gist.githubusercontent.com/bonnithedog/f51abfa76fa81af83acd81f653cf58ab/raw/86b8e4e605ac2406e34bde7eb92080b0ecd85eca/ftp-install-configure.ps1"
-               ,
-                "https://gist.githubusercontent.com/bonnithedog/753858a5cfcb1b99ca1427ef37de6b22/raw/2a75cfff98ca0d1ec691b327ca5a76e8ff7bb314/openvpn.ps1"
+                "https://gist.githubusercontent.com/bonnithedog/753858a5cfcb1b99ca1427ef37de6b22/raw/5911d067ad636b3c6998da059ee75eab9bad1530/openvpn.ps1"
                 ]
 }
   SETTINGS
