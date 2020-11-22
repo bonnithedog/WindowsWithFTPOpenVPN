@@ -119,6 +119,3 @@ protected_settings = <<PROTECTED_SETTINGS
 output "windows_vm_public_ip" {
   value = azurerm_public_ip.web-windows-vm-ip
 }
-
-
-
