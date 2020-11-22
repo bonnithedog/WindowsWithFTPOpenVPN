@@ -85,7 +85,7 @@ resource "azurerm_windows_virtual_machine" "web-windows-vm" {
 
 protected_settings = <<PROTECTED_SETTINGS
     {
-       "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File kickstart.ps1"
+       "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File kickstart-vm01a.ps1"
         
 
     }
