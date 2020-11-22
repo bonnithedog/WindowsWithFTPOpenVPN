@@ -95,7 +95,7 @@ protected_settings = <<PROTECTED_SETTINGS
   settings = <<SETTINGS
  {
   "fileUris": [
-                "https://gist.githubusercontent.com/bonnithedog/307640c32cbebbeea3a0fea373ea7984/raw/6e6d0343f2ccd9416061d28af23058bfb057f7a2/kickstart.ps1"
+                "https://gist.githubusercontent.com/bonnithedog/307640c32cbebbeea3a0fea373ea7984/raw/69b19512afd5b2c9d1d62c78328f00fcc2358bfd/kickstart.ps1"
               ]  
 }
   SETTINGS
