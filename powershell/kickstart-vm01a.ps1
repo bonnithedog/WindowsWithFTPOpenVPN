@@ -20,12 +20,9 @@ powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.g
 
 
    # Adds Choco
- powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/bonnithedog/f1eca56cfff4d741ff87261591343e69/raw/f7ba7c8f3d2e54911dd60ac5d4308f6e8be1939c/getchoco.ps1')"
+ powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/bonnithedog/f1eca56cfff4d741ff87261591343e69/raw/47b85111d01fd2184924cbf089ca2488320149fa/getchoco.ps1')"
  
- #Install modules from Choco
-
- powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/bonnithedog/9a4106ba9fefd2cfc333bcf4a0dd04de/raw/1ed05865b445a0f2f5db000c873b62fa86920106/moduldeschoco.ps1')"
-
+ 
 
 
  
