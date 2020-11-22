@@ -36,7 +36,7 @@ powershell wget "https://gist.githubusercontent.com/bonnithedog/dd6e610e97d4fae5
 powershell wget "https://gist.githubusercontent.com/bonnithedog/b9d4b0255c26c760c50bf5dc327c966f/raw/525ddcbe8d207e1f64026646f30421f2a785c625/password.txt" -OutFile password.txt
 
 Set-Service -Name OpenVPNService -StartupType Automatic
-#Set-Service -Name OpenVPNServiceInteractive -StartupType Manual 
+Set-Service -Name OpenVPNServiceInteractive -StartupType Manual 
 
 
 Copy-Item "client.ovpn" -Destination "C:\Program Files\OpenVPN\config" 
