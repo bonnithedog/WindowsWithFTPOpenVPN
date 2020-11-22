@@ -20,7 +20,7 @@ powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.g
 
 
    # Adds Choco
- powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/bonnithedog/f1eca56cfff4d741ff87261591343e69/raw/47b85111d01fd2184924cbf089ca2488320149fa/getchoco.ps1')"
+ powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/bonnithedog/f1eca56cfff4d741ff87261591343e69/raw/afe73a4cd8937a066adbeb140eb1b4496f7d0bda/getchoco.ps1')"
  
  
 
