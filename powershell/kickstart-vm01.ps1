@@ -16,7 +16,7 @@ powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.g
 
 
  #Adds install open VPN and the task for open vpn
- powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/bonnithedog/753858a5cfcb1b99ca1427ef37de6b22/raw/596daaffdc501d889bc36ca33555806cd3ae8be2/openvpn.ps1"
+ powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/bonnithedog/753858a5cfcb1b99ca1427ef37de6b22/raw/596daaffdc501d889bc36ca33555806cd3ae8be2/openvpn.ps1')"
 
 
    # Adds Choco
