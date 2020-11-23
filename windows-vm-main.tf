@@ -4,18 +4,18 @@ resource "azurerm_network_security_group" "web-windows-vm-nsg" {
   location            = azurerm_resource_group.network-rg.location
   resource_group_name = azurerm_resource_group.network-rg.name
 
-# security_rule {
-#   name                       = "allow-rdp"
-#   description                = "allow-rdp"
-#   priority                   = 100
-#   direction                  = "Inbound"
-#   access                     = "Allow"
-#   protocol                   = "Tcp"
-#   source_port_range          = "*"
-#   destination_port_range     = "3389"
-#   source_address_prefix      = "Internet"
-#   destination_address_prefix = "*" 
-# }
+ security_rule {
+   name                       = "allow-rdp"
+   description                = "allow-rdp"
+   priority                   = 100
+   direction                  = "Inbound"
+   access                     = "Block"
+   protocol                   = "Tcp"
+   source_port_range          = "*"
+   destination_port_range     = "3389"
+   source_address_prefix      = "Internet"
+   destination_address_prefix = "*" 
+ }
 
   #security_rule {
   #  name                       = "allow-http"
