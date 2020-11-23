@@ -9,7 +9,7 @@ resource "azurerm_network_security_group" "web-windows-vm-nsg" {
    description                = "allow-rdp"
    priority                   = 100
    direction                  = "Inbound"
-   access                     = "Block"
+   access                     = "Deny"
    protocol                   = "Tcp"
    source_port_range          = "*"
    destination_port_range     = "3389"
