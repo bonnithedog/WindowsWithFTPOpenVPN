@@ -7,7 +7,7 @@ There is a script which need to be available on for the VM to install software.
 In this example there is used a public blob storage in azure for test purpose.
 This setup includes password in the powershellscript and should not be used as production setup.
 
-Used with terraform cloud where this variables are set:
+Used with terraform cloud https://www.terraform.io/cloud where this variables are set:
 
 ```bash
 #Terraform Variables
